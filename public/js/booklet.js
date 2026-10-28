@@ -239,6 +239,13 @@
   $('lbPrev').onclick = () => lbGo(-1);
   $('lbNext').onclick = () => lbGo(1);
   lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+  // contents links inside the lightbox jump to that page there
+  frame.addEventListener('click', (e) => {
+    const a = e.target.closest('a[data-page]');
+    if (!a) return;
+    e.preventDefault();
+    lbGo(Number(a.dataset.page) - lbIndex);
+  });
 
   // swipe inside the lightbox
   let sx = null;
