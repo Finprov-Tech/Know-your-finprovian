@@ -3,3 +3,4 @@ data/hr-config.json
 uploads/*
 !uploads/.gitkeep
 .claude/
+data/*.tmp

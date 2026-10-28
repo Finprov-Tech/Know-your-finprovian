@@ -110,17 +110,23 @@
   }
 
   // Downscale big photos in the browser so uploads stay small and the booklet stays fast.
+  // Each image is kept under ~1.3 MB so a full upload fits the host's 4.5 MB request limit.
+  const MAX_BYTES = 1.3 * 1024 * 1024;
   async function shrink(file, maxSide = 2000) {
     if (!file) return null;
     try {
       const bmp = await createImageBitmap(file);
       const scale = Math.min(1, maxSide / Math.max(bmp.width, bmp.height));
-      if (scale === 1 && file.size < 1.5 * 1024 * 1024) return file;
+      if (scale === 1 && file.size < MAX_BYTES) return file;
       const c = document.createElement('canvas');
       c.width = Math.round(bmp.width * scale);
       c.height = Math.round(bmp.height * scale);
       c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
-      const blob = await new Promise((r) => c.toBlob(r, 'image/jpeg', 0.88));
+      let blob;
+      for (const q of [0.88, 0.8, 0.7, 0.6]) {
+        blob = await new Promise((r) => c.toBlob(r, 'image/jpeg', q));
+        if (blob.size < MAX_BYTES) break;
+      }
       return new File([blob], file.name.replace(/\.\w+$/, '') + '.jpg', { type: 'image/jpeg' });
     } catch {
       return file;

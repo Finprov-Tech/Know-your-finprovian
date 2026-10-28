@@ -53,6 +53,22 @@ data/finprovians.json      Booklet entries, in order
 scripts/prepare-assets.py  One-time: regenerate public/pages from Assets/
 ```
 
-## Hosting notes
+## Hosting on Vercel
 
-Back up `data/` and `uploads/`: they hold everything HR adds. If you host it behind HTTPS, set `cookie.secure: true` in `server.js`.
+Vercel has no lasting disk, so the app switches to **Vercel Blob** storage automatically whenever `BLOB_READ_WRITE_TOKEN` is set. The first time it runs it starts from the entries in `data/finprovians.json`; after that, HR changes are saved in Blob.
+
+1. Vercel → **Add New → Project** → import this repo (preset: Express, no build settings needed).
+2. Project → **Storage → Create → Blob** → connect it to the project (adds `BLOB_READ_WRITE_TOKEN`).
+3. Project → **Settings → Environment Variables**:
+   - `HR_PASSWORD`: the HR login password (required; HR login stays off without it)
+   - `SESSION_SECRET`: any long random string
+   - `HR_USERNAME`: optional, defaults to `hr`
+4. Redeploy so the variables take effect.
+
+Uploads are downscaled in the browser to fit Vercel's 4.5 MB request limit.
+
+## Hosting on a VPS / panel
+
+Run `npm install && npm start` (e.g. under pm2) without `BLOB_READ_WRITE_TOKEN`: entries and images are stored on disk in `data/` and `uploads/`. Back both up. Login comes from `data/hr-config.json` (or `HR_PASSWORD` if set). Behind HTTPS the login cookie is marked secure only on Vercel; set `secure: true` in `cookieOpts` in `server.js` for other HTTPS hosts.
+
+To move from Vercel to a VPS, download the latest `data/finprovians-*.json` and the `uploads/` images from the Blob store; entries added on Vercel point at their Blob URLs, which keep working as long as the Blob store exists.
