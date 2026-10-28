@@ -1,0 +1,7 @@
+.claude/
+Assets/
+data/hr-config.json
+data/*.tmp
+uploads/*
+!uploads/.gitkeep
+.env*

@@ -4,3 +4,6 @@ uploads/*
 !uploads/.gitkeep
 .claude/
 data/*.tmp
+
+.vercel
+.env*
