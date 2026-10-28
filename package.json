@@ -1,0 +1,19 @@
+{
+  "name": "know-your-finprovian",
+  "version": "1.0.0",
+  "description": "Flip-through booklet introducing new Finprov team members, with an HR-only desk to add people",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "set-password": "node scripts/set-password.js",
+    "prepare-assets": "python scripts/prepare-assets.py"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.22.3",
+    "express-session": "^1.19.0",
+    "multer": "^1.4.5-lts.1",
+    "page-flip": "^2.0.7"
+  },
+  "private": true
+}

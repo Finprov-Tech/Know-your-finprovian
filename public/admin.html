@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HR Desk · Know Your Finprovian</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Finprov — HR Desk">
+      <img class="brand-logo" src="/img/finprov-logo.png" alt="Finprov · Skill up Rise up" />
+      <span class="brand-title">HR <em>Desk</em></span>
+    </a>
+    <button class="hr-link" id="logoutBtn" type="button" hidden>Sign out</button>
+  </header>
+
+  <main class="admin">
+    <!-- Login -->
+    <section class="card login-card" id="loginView" hidden>
+      <div class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg></div>
+      <h1>HR <em>Desk</em></h1>
+      <p class="sub">Only the HR team can add finprovians to the booklet.</p>
+      <form id="loginForm" autocomplete="on">
+        <div class="field">
+          <label for="username">Username</label>
+          <input class="input" id="username" name="username" autocomplete="username" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input class="input" id="password" name="password" type="password" autocomplete="current-password" required />
+        </div>
+        <button class="btn block" type="submit">Sign in</button>
+        <p class="msg" id="loginMsg" role="alert"></p>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <div class="wrap" id="dashView" hidden>
+      <div class="admin-head">
+        <div>
+          <h1>Welcome a new <em>finprovian</em></h1>
+          <p>Add someone to the booklet. They'll appear right after the last page.</p>
+        </div>
+        <div class="actions">
+          <a class="btn line" href="#manage">Manage / Remove</a>
+          <a class="btn line" href="/" target="_blank" rel="noopener">Open booklet</a>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <section class="card panel">
+          <h2>New page</h2>
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-mode="poster" type="button">Upload a poster</button>
+            <button class="tab" data-mode="profile" type="button">Build a page</button>
+          </div>
+
+          <form id="addForm" novalidate>
+            <div class="row2">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input class="input" id="name" name="name" maxlength="80" required placeholder="e.g. Anjali Jaimon" />
+              </div>
+              <div class="field">
+                <label for="role">Role <small>(optional)</small></label>
+                <input class="input" id="role" name="role" maxlength="80" placeholder="e.g. Career Counselor" />
+              </div>
+            </div>
+
+            <div data-for="poster">
+              <div class="field">
+                <label>Poster image</label>
+                <label class="drop">
+                  <input type="file" name="poster" accept="image/jpeg,image/png,image/webp" />
+                  <span class="thumb"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16" /></svg></span>
+                  <span class="t">Choose or drop the poster<small>JPG, PNG or WEBP · portrait (A4) works best</small></span>
+                </label>
+              </div>
+            </div>
+
+            <div data-for="profile" hidden>
+              <div class="row2">
+                <div class="field">
+                  <label>Portrait photo</label>
+                  <label class="drop">
+                    <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" />
+                    <span class="thumb"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="4" /><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" /></svg></span>
+                    <span class="t">Their photo<small>Required</small></span>
+                  </label>
+                </div>
+                <div class="field">
+                  <label>Family photo</label>
+                  <label class="drop">
+                    <input type="file" name="familyPhoto" accept="image/jpeg,image/png,image/webp" />
+                    <span class="thumb"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3" /><circle cx="16" cy="9" r="3" /><path d="M2 20c1-3 3-5 6-5s5 2 6 5M12 18c.8-2 2.2-3 4-3 3 0 5 2 6 5" /></svg></span>
+                    <span class="t">Optional<small>Shown beside their photo</small></span>
+                  </label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="intro">Introduction <small>— in their own words</small></label>
+                <textarea class="input" id="intro" name="intro" maxlength="2500" placeholder="Hi everyone,&#10;&#10;I'm … from … I come from a … family …&#10;&#10;Outside of work, I love …"></textarea>
+              </div>
+            </div>
+
+            <button class="btn block" type="submit" id="saveBtn">Add to booklet</button>
+            <p class="msg" id="addMsg" role="status"></p>
+          </form>
+        </section>
+
+        <aside class="preview-wrap">
+          <h3>Live preview</h3>
+          <div class="preview" id="preview"><div class="empty">Your page will appear here<br>as you fill in the details.</div></div>
+        </aside>
+      </div>
+
+      <section class="card list" id="manage">
+        <div class="list-head">
+          <div>
+            <h2>In the booklet</h2>
+            <p class="list-sub">Reorder with ↑ ↓, or remove someone from the booklet.</p>
+          </div>
+          <div class="list-tools">
+            <input class="input search" id="search" type="search" placeholder="Search by name…" aria-label="Search finprovians" />
+            <span id="count"></span>
+          </div>
+        </div>
+        <ul class="people" id="people"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="/js/pages.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

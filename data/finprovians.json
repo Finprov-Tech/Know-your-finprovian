@@ -1,0 +1,202 @@
+[
+  {
+    "id": "seed-01",
+    "name": "Francis Sonu",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/01-francis-sonu.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-02",
+    "name": "Alan Xavier",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/02-alan-xavier.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-03",
+    "name": "Aromal",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/03-aromal.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-04",
+    "name": "Sinchana",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/04-sinchana.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-05",
+    "name": "Lisha",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/05-lisha.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-06",
+    "name": "Nandana",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/06-nandana.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-07",
+    "name": "Sreelakshmi",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/07-sreelakshmi.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-08",
+    "name": "Abhay Katti",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/08-abhay-katti.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-09",
+    "name": "Anjali Jaimon",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/09-anjali-jaimon.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-10",
+    "name": "Austin Johns",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/10-austin-johns.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-11",
+    "name": "Akshay Das",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/11-akshay-das.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-12",
+    "name": "Aditya",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/12-aditya.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-13",
+    "name": "Anna",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/13-anna.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-14",
+    "name": "Arsha",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/14-arsha.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-15",
+    "name": "Aysha",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/15-aysha.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-16",
+    "name": "Josmy Joseph",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/16-josmy-joseph.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-17",
+    "name": "Rahul K. U.",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/17-rahul-k-u.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-18",
+    "name": "Bhoomadevi S",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/18-bhoomadevi-s.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-19",
+    "name": "Aruna Ashokan",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/19-aruna-ashokan.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-20",
+    "name": "Arathy",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/20-arathy.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-21",
+    "name": "Aswathy",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/21-aswathy.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-22",
+    "name": "Athira Murali K",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/22-athira-murali-k.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-23",
+    "name": "Fazil Mohammed",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/23-fazil-mohammed.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-24",
+    "name": "Naheema",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/24-naheema.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "id": "seed-25",
+    "name": "Surya Kumar P S",
+    "role": "",
+    "type": "poster",
+    "image": "/pages/25-surya-kumar-p-s.jpg",
+    "createdAt": "2026-10-27T00:00:00.000Z"
+  }
+]

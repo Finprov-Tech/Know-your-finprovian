@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Know Your Finprovian</title>
+  <meta name="description" content="Meet the newest members of the Finprov family — a flip-through booklet." />
+  <meta name="theme-color" content="#081233" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="booklet-page">
+  <div class="backdrop space" aria-hidden="true"></div>
+  <canvas class="stars" id="stars" aria-hidden="true"></canvas>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Finprov — Know Your Finprovian">
+      <img class="brand-logo" src="/img/finprov-logo-white.png" alt="Finprov · Skill up Rise up" />
+    </a>
+    <a class="hr-link" href="/admin">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21c1.4-4 4.4-6 8-6s6.6 2 8 6" /></svg>
+      HR access
+    </a>
+  </header>
+
+  <main class="stage">
+    <div class="book-shell" id="bookShell">
+      <div id="book" class="book"></div>
+      <button class="fullview" id="zoomBtn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" /></svg>
+        View full page
+      </button>
+    </div>
+    <div class="loader" id="loader"><span></span>Opening the booklet…</div>
+  </main>
+
+  <nav class="controls" aria-label="Booklet navigation">
+    <button class="ctrl" id="prevBtn" aria-label="Previous page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+    </button>
+    <div class="status" aria-live="polite">
+      <span class="status-name" id="statusName">Cover</span>
+      <span class="status-page" id="statusPage"></span>
+    </div>
+    <button class="ctrl" id="nextBtn" aria-label="Next page">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+    </button>
+    <span class="divider"></span>
+    <button class="ctrl ghost" id="tocBtn" aria-label="Go to contents" title="Contents">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h9" /></svg>
+    </button>
+  </nav>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Page reader">
+    <button class="lb-close" id="lbClose" aria-label="Close reader">×</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous page">‹</button>
+    <div class="lb-stage"><div class="lb-frame" id="lbFrame"></div></div>
+    <button class="lb-nav next" id="lbNext" aria-label="Next page">›</button>
+  </div>
+
+  <script src="/vendor/page-flip.js"></script>
+  <script src="/js/pages.js"></script>
+  <script src="/js/space.js"></script>
+  <script src="/js/booklet.js"></script>
+</body>
+</html>
